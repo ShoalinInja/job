@@ -1,12 +1,8 @@
 "use client";
 
-// export const dynamic = "force-dynamic";
-
-import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 
 function CalculatorPage() {
-  const searchParams = useSearchParams();
   const [operator, setOperator] = useState<string | null>(null);
   const [num1, setNum1] = useState<number | string>("");
   const [num2, setNum2] = useState<number | string>("");
@@ -18,7 +14,7 @@ function CalculatorPage() {
     if (selectedOperator) {
       setOperator(selectedOperator);
     }
-  }, [searchParams]);
+  }, []);
 
   const handleCalculation = () => {
     if (operator && num1 !== "" && num2 !== "") {
