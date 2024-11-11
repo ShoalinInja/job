@@ -1,5 +1,7 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -11,7 +13,7 @@ function CalculatorPage() {
   const [result, setResult] = useState<number | string>("");
 
   useEffect(() => {
-    const operatorFromUrl = searchParams.get("operator"); // Get operator from URL
+    const operatorFromUrl = searchParams.get("operator");
     if (operatorFromUrl) {
       setOperator(operatorFromUrl);
     }
@@ -47,7 +49,7 @@ function CalculatorPage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-center text-white bg-gray-800 p-4">
-      <h1 className="text-2xl mb-4">Calculator</h1>
+      <h1 className="text-2xl mb-4">{operator} Calculator</h1>
       <div className="mb-4">
         <input
           type="number"
