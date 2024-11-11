@@ -27,7 +27,7 @@ function LoginPage() {
     // Handle login logic here (if required)
 
     // Redirect to the calculator page with the selected operator
-    router.push(`/set1/quest03/login/calculator?operator=${selectedOperator}`);
+    router.push(`/set1/quest03/login/calculator`);
   };
 
   return (

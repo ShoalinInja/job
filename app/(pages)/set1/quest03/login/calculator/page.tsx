@@ -1,6 +1,6 @@
 "use client";
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 import { useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -13,9 +13,10 @@ function CalculatorPage() {
   const [result, setResult] = useState<number | string>("");
 
   useEffect(() => {
-    const operatorFromUrl = searchParams.get("operator");
-    if (operatorFromUrl) {
-      setOperator(operatorFromUrl);
+    // Retrieve the selected operator from local storage
+    const selectedOperator = localStorage.getItem("selectedOperator");
+    if (selectedOperator) {
+      setOperator(selectedOperator);
     }
   }, [searchParams]);
 
