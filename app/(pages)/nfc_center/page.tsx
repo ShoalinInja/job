@@ -13,14 +13,14 @@ export default function NFC_Hub() {
   );
   const custIDFetcher = (urls: any) => {
     // Split the URL by the '/' character
-    const segments = urls.split("/");
+    // const segments = urls.split("/");
     // Retrieve the 'CustID' query parameter
     // Parse the current URL
     const url = new URL(urls);
     const retrievedCustID = url.searchParams.get("CustID");
     // The desired part (nfc_center) is the last segment
-    const finalPath = segments[segments.length - 1];
-    console.log("Path : ", finalPath); // Output: nfc_center
+    // const finalPath = segments[segments.length - 1];
+    console.log("Path : "); // Output: nfc_center
     setCustID(retrievedCustID!);
     setStatus(true);
     console.log("CustID :  ", custID); // Output: BC123410
@@ -55,7 +55,7 @@ export default function NFC_Hub() {
           // Display the extracted URLs
           if (urls.length > 0) {
             // Retrieve the query parameter 'CustID'
-            // const custID = urls.searchParams.get("CustID");
+            const custID = urls.searchParams.get("CustID");
             custIDFetcher(urls);
             setScanProgress("Scanning Complete");
           } else {
